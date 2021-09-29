@@ -30,7 +30,7 @@ function App() {
     }, {    
       root: document.querySelector(".sections"),
       rootMargin: '0px',
-      threshold: 0.999
+      threshold: 0.9
     });
 
     components.forEach(component => {
