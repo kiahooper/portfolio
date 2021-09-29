@@ -27,7 +27,11 @@ function App() {
         }
         
       })
-    }, {threshold: 0.9});
+    }, {    
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.999
+    });
 
     components.forEach(component => {
       observer.observe(component);
