@@ -28,7 +28,7 @@ function App() {
         
       })
     }, {    
-      root: document.body,
+      root: document.querySelector(".sections"),
       rootMargin: '0px',
       threshold: 0.999
     });
