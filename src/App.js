@@ -47,10 +47,10 @@ function App() {
       <ScrollPagination visibleElement={visibleElement}/>
       <SocialSidebar />
       <div className="sections">
-        {/* <Home visibleElement={visibleElement} /> */}
-        {/* <Projects visibleElement={visibleElement} /> */}
+        <Home visibleElement={visibleElement} />
+        <Projects visibleElement={visibleElement} />
         <About visibleElement={visibleElement}/>
-        {/* <Contact visibleElement={visibleElement}/> */}
+        <Contact visibleElement={visibleElement}/>
       </div>
     </div>
   );
