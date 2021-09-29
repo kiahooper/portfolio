@@ -27,7 +27,7 @@ function App() {
         }
         
       })
-    }, {threshold: 1});
+    }, {threshold: 0.9});
 
     components.forEach(component => {
       observer.observe(component);
