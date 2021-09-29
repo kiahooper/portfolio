@@ -1,0 +1,64 @@
+@import "../../globalStyles/variables";
+@import "../../globalStyles/mixins";
+
+.scrollPagination {
+  @include mediaMax($tablet) {
+    display: none;
+  }
+
+  position: absolute;
+  left: 0;
+  top: 40vh;
+  z-index: 9;
+
+  &.inverse {
+    ul {
+      li {
+        &.active {
+          color: white;
+
+          span {
+            background-color: white;
+            border: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    margin: 0 2em;
+    padding: 0;
+    list-style: none;
+
+    li {
+      @include flexBox(flex-start, center);
+      font-size: 1.1rem;
+      color: transparent;
+      margin: 0.5em 0;
+      transition: all 400ms ease;
+      width: fit-content;
+
+      &.active {
+        color: $color1;
+
+        span {
+          background-color: $color1;
+          border: 1px solid $color1;
+          transform: scale(1.5);
+        }
+      }
+
+      span {
+        aspect-ratio: 1 / 1;
+        display: inline-block;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        border: 2px solid white;
+        margin-right: 0.4em;
+        transition: all 300ms ease;
+      }
+    }
+  }
+}

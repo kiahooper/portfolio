@@ -1,0 +1,39 @@
+@import "../../globalStyles/variables";
+@import "../../globalStyles/mixins";
+
+.socialSidebar {
+  @include mediaMax($tablet) {
+    display: none;
+  }
+
+  width: min-content;
+  position: absolute;
+  right: 0;
+  top: 40vh;
+  z-index: 9;
+  overflow: hidden;
+  padding-left: 1vw;
+
+  a {
+    position: relative;
+    display: inline-block;
+    background-color: darken($color2, 2%);
+    width: 50px;
+    height: 40px;
+    padding: 1em;
+    @include borderRadius(20px, 0, 0, 20px);
+    margin-bottom: 0.6em;
+    @include boxShadow(-2px 5px 10px -4px rgba(0, 0, 0, 0.5));
+    right: -10px;
+    transition: all 200ms ease;
+
+    &:hover {
+      right: 0;
+    }
+
+    img {
+      max-height: 100%;
+      width: auto;
+    }
+  }
+}

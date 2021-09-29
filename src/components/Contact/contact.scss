@@ -1,0 +1,314 @@
+@import "../../globalStyles/variables";
+@import "../../globalStyles/mixins";
+
+.contact {
+  @include flexBox(center, center);
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  transition: all 500ms ease;
+  padding-top: 12vh;
+
+  &.active {
+    .divider {
+      svg {
+        height: 55vh;
+      }
+    }
+
+    h2 {
+      letter-spacing: 0.2em;
+      opacity: 1;
+    }
+
+    form {
+      opacity: 1;
+    }
+  }
+
+  .divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transition: top 1s ease-out;
+
+    svg {
+      position: relative;
+      display: block;
+      width: calc(229% + 1.3px);
+      height: 45vh;
+      transform: rotateY(180deg);
+      fill: $color2;
+      transition: height 1s ease-out;
+    }
+  }
+
+  h2 {
+    z-index: 1;
+    color: $color1;
+    letter-spacing: 0.7em;
+    transition: letter-spacing 800ms ease, opacity 500ms ease;
+    opacity: 0;
+  }
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    @for $i from 1 through 30 {
+      @keyframes particle-animation-#{$i} {
+        100% {
+          transform: translate3d(
+            (random(95) * 1vw),
+            (random(95) * 1vh),
+            (random(100) * 1px)
+          );
+        }
+      }
+
+      .particle:nth-child(#{$i}) {
+        animation: particle-animation-#{$i} 60s infinite;
+        $size: random(5) + 5 + px;
+        opacity: random(100) / 100;
+        height: $size;
+        width: $size;
+        animation-delay: -$i * 0.2s;
+        transform: translate3d(
+          (random(90) * 1vw),
+          (random(90) * 1vh),
+          (random(100) * 1px)
+        );
+        background: $color2;
+      }
+    }
+  }
+
+  .form {
+    margin: 0.1em 0;
+    opacity: 0;
+    z-index: 1;
+    position: relative;
+    padding: 2em;
+    width: 50%;
+    max-height: 70%;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    @include borderRadius(5px);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    @include flexBox(space-between, flex-start);
+    flex-direction: column;
+    transition: opacity 500ms ease;
+    @include mediaMax($tablet) {
+      width: 70%;
+    }
+
+    label {
+      width: 100%;
+      display: inherit;
+      flex-direction: column;
+      color: $color2;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 1em;
+
+      .input {
+        @include borderRadius(5px);
+        background: rgba(255, 255, 255, 0.6);
+        border: none;
+        transition: background 300ms ease;
+        @include flexBox(flex-start, flex-start);
+        flex-wrap: wrap;
+        padding-top: 0.8em;
+        margin-top: 0.4em;
+
+        .icon {
+          box-sizing: border-box;
+          padding-left: 0.4em;
+          width: 10%;
+          opacity: 0.2;
+          transition: all 300ms ease;
+        }
+
+        &:focus-within {
+          .icon {
+            opacity: 1;
+          }
+        }
+
+        input,
+        textarea {
+          font-family: inherit;
+          font-size: inherit;
+          box-sizing: border-box;
+          padding-bottom: 0.8em;
+        }
+        input,
+        textarea {
+          box-sizing: border-box;
+          width: 90%;
+          background: transparent;
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        textarea {
+          overflow: auto;
+          resize: none;
+        }
+
+        &:focus-within {
+          background: rgba(255, 255, 255);
+
+          &.input {
+            &::after {
+              content: "";
+              margin-top: -3px;
+              background-color: $color1;
+              @include borderRadius(0, 0, 5px, 5px);
+              height: 3px;
+              width: 0;
+              animation: 500ms underline ease forwards;
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      position: relative;
+      color: white;
+      text-transform: uppercase;
+      font-family: $headlineFont;
+      letter-spacing: 0.3em;
+      font-size: 1rem;
+      @include borderRadius(5px);
+      width: 100%;
+      border: none;
+      padding: 1em;
+      background: $color1;
+      transition: background 50ms ease, transform 50ms ease;
+
+      &:active {
+        transform: scale(0.98);
+        background: darken($color1, 5%);
+      }
+
+      &.active {
+        .btn-particle {
+          position: absolute;
+          border-radius: 50%;
+          pointer-events: none;
+          background: $color2;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          z-index: -1;
+          opacity: 0;
+
+          @for $i from 1 through 8 {
+            @keyframes btn-particle-animation-#{$i} {
+              100% {
+                left: -(random(300) * 1px);
+                top: (random(300) * 1px);
+                transform: scale(0);
+                opacity: 1;
+              }
+            }
+
+            &:nth-of-type(#{$i}) {
+              animation: btn-particle-animation-#{$i} 1000ms ease-in-out;
+              animation-delay: -$i * 50ms;
+              background: $color1;
+              opacity: random(100) / 100;
+              $size: random(30) + 5 + px;
+              height: $size;
+              width: $size;
+            }
+          }
+          @for $i from 9 through 16 {
+            @keyframes btn-particle-animation-#{$i} {
+              100% {
+                left: (random(300) * 1px);
+                top: -(random(300) * 1px);
+                transform: scale(0);
+                opacity: 1;
+              }
+            }
+
+            &:nth-of-type(#{$i}) {
+              animation: btn-particle-animation-#{$i} 1000ms ease-in-out;
+              animation-delay: -$i * 50ms;
+              background: $color1;
+              opacity: random(100) / 100;
+              $size: random(30) + 5 + px;
+              height: $size;
+              width: $size;
+            }
+          }
+          @for $i from 17 through 23 {
+            @keyframes btn-particle-animation-#{$i} {
+              100% {
+                left: (random(300) * 1px);
+                top: (random(300) * 1px);
+                transform: scale(0);
+                opacity: 1;
+              }
+            }
+
+            &:nth-of-type(#{$i}) {
+              animation: btn-particle-animation-#{$i} 1000ms ease-in-out;
+              animation-delay: -$i * 50ms;
+              background: $color1;
+              opacity: random(100) / 100;
+              $size: random(30) + 5 + px;
+              height: $size;
+              width: $size;
+            }
+          }
+          @for $i from 24 through 30 {
+            @keyframes btn-particle-animation-#{$i} {
+              100% {
+                left: -(random(300) * 1px);
+                top: -(random(300) * 1px);
+                transform: scale(0);
+                opacity: 1;
+              }
+            }
+
+            &:nth-of-type(#{$i}) {
+              animation: btn-particle-animation-#{$i} 1000ms ease-in-out;
+              animation-delay: -$i * 50ms;
+              background: $color2;
+              opacity: calc(random(100) / 100);
+              $size: random(30) + 5 + px;
+              height: $size;
+              width: $size;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes underline {
+  100% {
+    width: 100%;
+  }
+}

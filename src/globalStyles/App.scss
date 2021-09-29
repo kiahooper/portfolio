@@ -1,0 +1,94 @@
+@import "../globalStyles/variables";
+@import "../globalStyles/mixins";
+
+body,
+html,
+:root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  color: white;
+  font-family: $mainFont;
+  background: $background;
+  transition: background 300ms ease;
+
+  &.app_projects {
+    background: $color2;
+  }
+
+  &.app_about {
+    background: $color1;
+  }
+
+  &.app_contact {
+    background: $color3;
+  }
+
+  .sections {
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > * {
+      width: 100vw;
+      height: 100vh;
+      scroll-snap-align: center;
+      z-index: 2;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: $headlineFont;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}
+
+:root {
+  font-size: 16px;
+
+  @include mediaMax($tablet) {
+    font-size: 12px;
+  }
+
+  @include mediaMax($smPhone) {
+    font-size: 10px;
+  }
+}

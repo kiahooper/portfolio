@@ -1,0 +1,99 @@
+@import "../../globalStyles/variables";
+@import "../../globalStyles/mixins";
+
+.home {
+  @include flexBox(center, flex-start);
+  flex-direction: column;
+  @include mediaMax($tablet) {
+    align-items: center;
+  }
+  position: relative;
+  background: transparent;
+  opacity: 0;
+  transition: all 500ms ease;
+
+  &.active {
+    opacity: 1;
+
+    .name {
+      h1 {
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  .name {
+    background: linear-gradient(-20deg, hsl(264, 100%, 78%) 0%, #ffc2b9 100%);
+    padding: 5%;
+    overflow: hidden;
+    @include flexBox(center, flex-start);
+    flex-direction: column;
+
+    @include mediaMin($laptop) {
+      margin-left: 150px;
+    }
+
+    h1 {
+      color: white;
+      margin: 0;
+      position: relative;
+      transition: all 200ms ease;
+      bottom: -10vh;
+      left: -10vh;
+      transition: all 2s ease;
+      &:hover {
+        transform: translate(10px, -10px);
+      }
+
+      &:nth-child(2) {
+        transition-delay: 200ms;
+      }
+      &:last-child {
+        transition-delay: 400ms;
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    bottom: 6%;
+    margin: -20px 0 0 -20px;
+    -webkit-transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 3px $color2 solid;
+    border-bottom: 3px $color2 solid;
+
+    &::before {
+      position: absolute;
+      left: 50%;
+      content: "";
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      margin: -10px 0 0 -10px;
+      border-left: none;
+      border-top: none;
+      border-right: 2px $color2 solid;
+      border-bottom: 2px $color2 solid;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-name: arrow;
+    }
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px);
+  }
+}
