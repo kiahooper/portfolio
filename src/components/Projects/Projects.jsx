@@ -25,6 +25,9 @@ export default function Projects(props) {
              <h2>Projects</h2>
              <div className="swiperWrapper">
                 <Swiper 
+                updateOnWindowResize={true}
+                resizeObserver={true}
+                observer={true}
                 effect={'coverflow'}
                 mousewheel={true}
                 navigation={{

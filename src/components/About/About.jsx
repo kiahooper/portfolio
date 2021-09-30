@@ -21,22 +21,13 @@ export default function About(props) {
                 <div className="content">
                     <h2>About</h2>
                     <div className="left">
-                    <h3>What I Do</h3>
-                        <p>Based near Melbourne, originally from Denmark, I am a keen software engineer with an affinity for web development. 
-                        </p>
-                        <p>I enjoy spending my time challenging myself, be it in or outside of work. 
-                            Besides programming, I spend my time surfing, scuba diving, hiking, drawing and am always up for trying something new.</p> 
-                        <p>I believe that you should never stop challenging yourself to learn new things and move outside your comfort zone. The everchanging nature of software engineering is a big part of why I find it so rewarding.</p>
-                    </div>
-                    <div className="right">
-                        <div className="skills">
-                            <h3>Languages I Speak</h3>
-                            <p>Javascript, React / JSX, HTML, CSS / Sass, SQL</p>
-                            <div className="learning">
-                                <p>Currently learning </p>
-                                <div className="dotdotdot"><span className="dot">.</span><span className="dot">.</span><span className="dot">.</span></div>
-                                <p> Node JS</p></div>
-                        </div>
+                        <h3>Languages I Speak</h3>
+                        <p>Javascript, React / JSX, HTML, CSS / Sass, SQL</p>
+                        <div className="learning">
+                            <p>Currently learning </p>
+                            <div className="dotdotdot"><span className="dot">.</span><span className="dot">.</span><span className="dot">.</span></div>
+                            <p> Node JS</p></div>
+
                         <h3>The Nitty-Gritty</h3>
                         <a href={`${process.env.PUBLIC_URL}/assets/CV-Kia-Hooper-Andersen.pdf`} className="cv" download>Download CV</a>
                         <p>Visit my 
@@ -47,32 +38,40 @@ export default function About(props) {
                             <a href="#contact" target="_blank">contact me</a>.
                         </p>
                     </div>
-
-                </div>
-                <div className="skillsOrbit">
-                    <div className="orbit">
-                        <div className="axis">
+                    <div className="right">
+                        <div className="skillsOrbit">
+                        <div className="orbit">
                             <div className="axis">
                                 <div className="axis">
-                                    <img className="icon html" src={`${process.env.PUBLIC_URL}/assets/icons/html.png`} alt="html logo"></img>
+                                    <div className="axis">
+                                        <img className="icon html" src={`${process.env.PUBLIC_URL}/assets/icons/html.png`} alt="html logo"></img>
+                                    </div>
+                                    <img className="icon" src={`${process.env.PUBLIC_URL}/assets/icons/css.png`} alt="css logo"></img>
                                 </div>
-                                <img className="icon" src={`${process.env.PUBLIC_URL}/assets/icons/css.png`} alt="css logo"></img>
-                            </div>
-                            <div className="axis2">
-                                <img src={`${process.env.PUBLIC_URL}/assets/icons/JS.png`} alt="JS logo"></img>
-                                <img  className="subIcon"src={`${process.env.PUBLIC_URL}/assets/icons/react.png`} alt="react logo"></img>
-                            </div>
-                            <div className="logoWrapper">
-                                <div className="logo">
-                                    <span></span>
-                                    <svg viewBox="0 0 92.25932 92.259996" xmlnsSvg="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                                        <g inkscapeLabel="Layer 1" inkscapeGroupmode="layer" id="layer1" transform="translate(-112.12123,-26.584484)">
-                                            <path d="m 161.14563,75.609417 v 43.235063 h 43.23492 z m -49.0244,-49.024933 h 42.20781 v 92.259856 h -42.20781 z"/>
-                                        </g>
-                                    </svg>
+                                <div className="axis2">
+                                    <img src={`${process.env.PUBLIC_URL}/assets/icons/JS.png`} alt="JS logo"></img>
+                                    <img  className="subIcon"src={`${process.env.PUBLIC_URL}/assets/icons/react.png`} alt="react logo"></img>
+                                </div>
+                                <div className="logoWrapper">
+                                    <div className="logo">
+                                        <span></span>
+                                        <svg viewBox="0 0 92.25932 92.259996" xmlnsSvg="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                            <g inkscapeLabel="Layer 1" inkscapeGroupmode="layer" id="layer1" transform="translate(-112.12123,-26.584484)">
+                                                <path d="m 161.14563,75.609417 v 43.235063 h 43.23492 z m -49.0244,-49.024933 h 42.20781 v 92.259856 h -42.20781 z"/>
+                                            </g>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                        <h3>What I Do</h3>
+                        <p>Based near Melbourne, originally from Denmark, I am a keen software engineer with an affinity for web development. 
+                        </p>
+                        <p>I enjoy spending my time challenging myself, be it in or outside of work. 
+                            Besides programming, I spend my time surfing, scuba diving, hiking, drawing and am always up for trying something new.</p> 
+                        <p>I believe that you should never stop challenging yourself to learn new things and move outside your comfort zone. The everchanging nature of software engineering is a big part of why I find it so rewarding.</p>
+
                     </div>
                 </div>
             </div>

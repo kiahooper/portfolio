@@ -6,14 +6,13 @@
   color: $color3;
   box-sizing: border-box;
   position: relative;
-  @include flexBox(center, flex-start);
-  flex-direction: column;
-  @include mediaMax($phone) {
-    align-items: center;
-  }
-  padding: 3em;
-  padding-top: 90px;
   transition: all 500ms ease;
+  @include mediaMax($tablet) {
+    @include flexBox(center, center);
+  }
+  @include mediaMin($laptop) {
+    padding-top: 15vh;
+  }
 
   &.active {
     .bottomBox {
@@ -67,28 +66,36 @@
   }
 
   .content {
-    @include mediaMax($tablet) {
-      width: 80%;
-    }
-    @include flexBox(space-between, flex-start);
-    flex-wrap: wrap;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
     opacity: 0;
     z-index: 1;
     font-weight: 600;
-    width: 67%;
-    height: 95%;
-    position: relative;
-    @include mediaMin($laptop) {
-      left: 7vw;
-    }
     transition: all 500ms ease-out;
+
+    @include mediaMax($tablet) {
+      @include flexBox(space-between, center);
+      flex-wrap: wrap;
+      width: 90%;
+      height: 65%;
+    }
+
+    @include mediaMin($laptop) {
+      left: 10vw;
+    }
 
     h2 {
       position: relative;
-      width: 100%;
       text-align: center;
       letter-spacing: 0.7em;
       transition: letter-spacing 800ms ease;
+      margin-bottom: 0.2em;
+      width: 100%;
+      @include mediaMin($laptop) {
+        width: 48%;
+      }
     }
 
     h3,
@@ -103,8 +110,8 @@
       color: $color1;
       text-decoration: none;
       padding: 0.5em;
-      @include borderRadius(3px);
       transition: all 200ms ease;
+      @include borderRadius(3px);
 
       &:hover {
         transform: scale(1.03);
@@ -134,12 +141,10 @@
       }
     }
 
-    .left,
-    .right {
-      width: 48%;
-    }
+    .left {
+      float: left;
+      width: 24%;
 
-    .skills {
       .learning {
         display: flex;
 
@@ -178,17 +183,33 @@
         }
       }
     }
+
+    .right {
+      float: right;
+      width: 73%;
+    }
+
+    @include mediaMax($tablet) {
+      .left,
+      .right {
+        width: 48%;
+        height: 100%;
+      }
+    }
   }
 }
 
 .skillsOrbit {
-  @include mediaMax($phone) {
-    display: none;
-  }
-  position: absolute;
-  right: -20vh;
-  top: 10vh;
+  position: relative;
+  float: right;
   z-index: 0;
+  display: none;
+
+  @include mediaMin($laptop) {
+    display: block;
+    shape-outside: circle(50%);
+    margin-left: 4rem;
+  }
 
   .orbit {
     position: relative;
@@ -264,6 +285,7 @@
       box-sizing: border-box;
       position: absolute;
       border: 4px dotted $color3;
+      opacity: 0.7;
       border-radius: 50%;
       @include flexBox(center, center);
       width: 20vh;

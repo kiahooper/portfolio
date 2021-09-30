@@ -88,7 +88,7 @@ html,
     font-size: 12px;
   }
 
-  @include mediaMax($smPhone) {
+  @include mediaMax($phone) {
     font-size: 10px;
   }
 }
