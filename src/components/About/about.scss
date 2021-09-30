@@ -3,20 +3,24 @@
 @import "../../globalStyles/animations";
 
 .about {
+  color: $color3;
   box-sizing: border-box;
   position: relative;
-  @include flexBox(center, center);
+  @include flexBox(center, flex-start);
   flex-direction: column;
+  @include mediaMax($phone) {
+    align-items: center;
+  }
   padding: 3em;
   padding-top: 90px;
   transition: all 500ms ease;
 
   &.active {
     .bottomBox {
-      height: 30vh;
+      height: 6vh;
 
       .divider {
-        bottom: 29vh;
+        bottom: 5vh;
       }
     }
 
@@ -34,7 +38,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 21vh;
+    height: 1vh;
     width: 100vw;
     background: $color2;
     @include flexBox(center, flex-start);
@@ -42,9 +46,10 @@
     .divider {
       z-index: 0;
       position: absolute;
-      bottom: 20vh;
+      bottom: 0;
       left: 0;
       width: 100vw;
+      min-height: 5vh;
       height: 100%;
       overflow: hidden;
       line-height: 0;
@@ -55,28 +60,27 @@
         position: relative;
         display: block;
         width: calc(100% + 1.3px);
-        height: 100px;
-        fill: #45358a;
+        height: 100%;
+        fill: $color2;
       }
     }
   }
 
   .content {
     @include mediaMax($tablet) {
-      width: 90%;
+      width: 80%;
     }
     @include flexBox(space-between, flex-start);
     flex-wrap: wrap;
     opacity: 0;
     z-index: 1;
     font-weight: 600;
-    padding: 2em;
-    width: 70%;
-    min-height: 65%;
-    background-color: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(5px);
-    @include borderRadius(3px);
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    width: 67%;
+    height: 95%;
+    position: relative;
+    @include mediaMin($laptop) {
+      left: 7vw;
+    }
     transition: all 500ms ease-out;
 
     h2 {
@@ -89,13 +93,13 @@
 
     h3,
     h2 {
-      margin-bottom: 0.2em;
+      color: white;
     }
 
     .cv {
       display: inline-block;
       margin-top: 0.1em;
-      background-color: white;
+      background-color: $color3;
       color: $color1;
       text-decoration: none;
       padding: 0.5em;
@@ -104,8 +108,8 @@
 
       &:hover {
         transform: scale(1.03);
-        color: white;
-        background-color: $color1;
+        color: $color1;
+        background-color: white;
       }
 
       &:active {
@@ -119,12 +123,12 @@
 
       a {
         text-decoration: none;
-        color: $color1;
+        color: $color2;
         margin: 0 6px;
         transition: color 200ms ease;
 
         &:hover {
-          border-bottom: 2px solid $color1;
+          border-bottom: 2px solid $color2;
           transform: scale(2);
         }
       }
@@ -194,17 +198,17 @@
     .axis {
       box-sizing: border-box;
       position: relative;
-      border: 4px dotted white;
+      border: 4px dotted $color3;
       border-radius: 50%;
       @include flexBox(center, center);
-      width: 85vh;
-      height: 85vh;
+      width: 80vh;
+      height: 80vh;
       animation: 300s spin linear infinite;
 
       .axis {
         box-sizing: border-box;
-        width: 60vh;
-        height: 60vh;
+        width: 55vh;
+        height: 55vh;
         animation: 200s spin linear infinite;
 
         .axis {
@@ -228,8 +232,8 @@
         .logo {
           position: relative;
           z-index: 9;
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
 
           svg {
             position: absolute;
@@ -238,16 +242,16 @@
             width: 100%;
             overflow: hidden;
             line-height: 0;
-            fill: $color2;
+            fill: $color3;
           }
 
           span {
             position: absolute;
             display: inline-block;
-            right: 6px;
-            top: 8px;
-            height: 18px;
-            width: 18px;
+            right: 5px;
+            top: 6px;
+            height: 15px;
+            width: 15px;
             margin-bottom: 6px;
             background-color: $color3;
             border-radius: 50%;

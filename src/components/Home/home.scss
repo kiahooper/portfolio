@@ -2,7 +2,7 @@
 @import "../../globalStyles/mixins";
 
 .home {
-  @include flexBox(center, flex-start);
+  @include flexBox(center, center);
   flex-direction: column;
   @include mediaMax($tablet) {
     align-items: center;
@@ -18,29 +18,37 @@
     .name {
       h1 {
         left: 0;
+        @include mediaMin($tablet) {
+          left: 20%;
+        }
         bottom: 0;
       }
     }
   }
 
   .name {
-    background: linear-gradient(-20deg, hsl(264, 100%, 78%) 0%, #ffc2b9 100%);
+    @include mediaMin($tablet) {
+      width: 70%;
+    }
+    background: linear-gradient(
+      -20deg,
+      lighten($color2, 25%) 0%,
+      lighten($color1, 10%) 100%
+    );
     padding: 5%;
     overflow: hidden;
     @include flexBox(center, flex-start);
     flex-direction: column;
-
-    @include mediaMin($laptop) {
-      margin-left: 150px;
-    }
 
     h1 {
       color: white;
       margin: 0;
       position: relative;
       transition: all 200ms ease;
-      bottom: -10vh;
-      left: -10vh;
+      @include mediaMin($tablet) {
+        bottom: -30vh;
+        left: -10vh;
+      }
       transition: all 2s ease;
       &:hover {
         transform: translate(10px, -10px);

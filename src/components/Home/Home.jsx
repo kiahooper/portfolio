@@ -7,7 +7,7 @@ export default function Home(props) {
 
     const addLongTextShadow = (color) => {
         let shadow = "";
-        for(let i=0; i<200; i++) {
+        for(let i=0; i<400; i++) {
             shadow += (shadow ? ",": "") + `${color} ` + -i*1+"px " + i*1 + "px";
         }
         return shadow
@@ -16,9 +16,9 @@ export default function Home(props) {
     return (
         <div id="home" className={visibleElement === "home" ? "home active" : "home"}>
             <div className="name">
-                <h1 style={{textShadow: addLongTextShadow("#52419c")}}>Kia</h1>
-                <h1 style={{textShadow: addLongTextShadow("#45358a")}}>Hooper</h1>
-                <h1 style={{textShadow: addLongTextShadow("#3a2d74")}}>Andersen</h1>
+                <h1 style={{textShadow: addLongTextShadow("#633ad1")}}>Kia</h1>
+                <h1 style={{textShadow: addLongTextShadow("#4d29af")}}>Hooper</h1>
+                <h1 style={{textShadow: addLongTextShadow("#44249a")}}>Andersen</h1>
             </div>   
         <a className="arrow" href="#projects"></a>
         </div>

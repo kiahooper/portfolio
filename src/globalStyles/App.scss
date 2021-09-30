@@ -18,7 +18,7 @@ html,
   position: relative;
   color: white;
   font-family: $mainFont;
-  background: $background;
+  background: white; // linear-gradient(-20deg, #bc8fff 0%, #ffc2b9 100%);
   transition: background 300ms ease;
 
   &.app_projects {
