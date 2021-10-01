@@ -15,11 +15,9 @@
   }
 
   &.active {
-    .bottomBox {
-      height: 13vh;
-
-      .divider {
-        bottom: 13vh;
+    .divider {
+      svg {
+        height: 30vh;
       }
     }
 
@@ -32,36 +30,23 @@
     }
   }
 
-  .bottomBox {
-    transition: all 1s ease-out;
+  .divider {
+    z-index: 0;
     position: absolute;
+    bottom: -10vh;
     left: 0;
-    bottom: -11vh;
-    height: 9vh;
     width: 100vw;
-    background: $color2;
-    @include flexBox(center, flex-start);
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
 
-    .divider {
-      z-index: 0;
-      position: absolute;
-      bottom: 5vh;
-      left: 0;
-      width: 100vw;
-      min-height: 5vh;
-      height: 100%;
-      overflow: hidden;
-      line-height: 0;
-      transform: rotate(180deg);
+    svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 20vh;
+      fill: $color2;
       transition: all 1s ease-out;
-
-      svg {
-        position: relative;
-        display: block;
-        width: calc(100% + 1.3px);
-        height: 10vh;
-        fill: $color2;
-      }
     }
   }
 
