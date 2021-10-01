@@ -76,6 +76,7 @@
             @include flexBox(center, center);
 
             a {
+              text-decoration: none;
               @include borderRadius(3px);
               margin: 0.4em;
               padding: 0.8em;

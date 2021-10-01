@@ -219,7 +219,7 @@
     .axis {
       box-sizing: border-box;
       position: relative;
-      border: 4px dotted $color3;
+      border: 4px dotted white;
       border-radius: 50%;
       @include flexBox(center, center);
       width: 80vh;
