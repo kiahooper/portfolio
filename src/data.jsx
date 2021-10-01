@@ -5,7 +5,7 @@ export const data = [
       desc:
         "A mock implementation of a shop, with the focus on the cart including a weather widget.",
       img:
-      `${process.env.PUBLIC_URL}/assets/projectImages/shopping-cart.png`,
+      `${process.env.PUBLIC_URL}/assets/projectImages/shopping-cart.PNG`,
       link: 'https://kiahooper.github.io/shopping-cart/',
       sourceCode: 'https://github.com/kiahooper/shopping-cart',
       toolbox: ['React', 'React Router', 'Sass', 'Flexbox'],
@@ -16,7 +16,7 @@ export const data = [
       desc:
         "A modern take on the old classic game, with a cabable computer opponent.",
       img:
-      `${process.env.PUBLIC_URL}/assets/projectImages/battleships.png`,
+      `${process.env.PUBLIC_URL}/assets/projectImages/battleships.PNG`,
       link:'https://kiahooper.github.io/battleships/',
       sourceCode: 'https://github.com/kiahooper/battleships',
       toolbox: ['React', 'Jest', 'Sass', 'Flexbox'],
@@ -27,7 +27,7 @@ export const data = [
       desc:
         "A simple memory card game, made enjoyable by tropical content.",
       img:
-      `${process.env.PUBLIC_URL}/assets/projectImages/memory-game.png`,
+      `${process.env.PUBLIC_URL}/assets/projectImages/memory-game.PNG`,
       link:'https://kiahooper.github.io/memory-game/',
       sourceCode: 'https://github.com/kiahooper/memory-game',
       toolbox: ['React'],
