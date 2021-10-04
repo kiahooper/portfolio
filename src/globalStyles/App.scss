@@ -22,7 +22,7 @@ html,
   position: relative;
   color: white;
   font-family: $mainFont;
-  background: white; // linear-gradient(-20deg, #bc8fff 0%, #ffc2b9 100%);
+  background: white;
   transition: background 300ms ease;
 
   &.app_projects {
@@ -56,6 +56,9 @@ html,
     > * {
       width: 100vw;
       height: 100vh;
+      @include mediaMax($phone) {
+        height: 90vh;
+      }
       scroll-snap-align: start;
       z-index: 2;
     }
