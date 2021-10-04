@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import './about.scss';
 import { EmojiObjects } from '@material-ui/icons';
+import useMousePosition from "../../hooks/useMousePosition";
 
 export default function About(props) {
 
     const {visibleElement} = props;
+    const {pageX, pageY} = useMousePosition();
+    console.log({pageX, pageY})
 
     return (
         <div id="about" className={visibleElement === "about" ? "about active" : "about"}>
@@ -67,7 +70,35 @@ export default function About(props) {
                     <p>Based near Melbourne, originally from Denmark, I am a keen software engineer with an affinity for web development. 
                     </p>
                     <p>I enjoy spending my time challenging myself, be it in or outside of work. 
-                        Besides programming, I spend my time surfing, scuba diving, hiking, drawing and am always up for trying something new.</p> 
+                        Besides programming, I spend my time 
+                        <span className="hover-wrapper">
+                            surfing
+                            <img 
+                                className="hover-img" 
+                                src={`${process.env.PUBLIC_URL}/assets/aboutImages/surfing.JPG`} 
+                                alt="Kia surfing"
+                                style={{top: `${pageX} px`, left:`${pageY} px`}}>
+                            </img>
+                        </span>,                        
+                        <span className="hover-wrapper">
+                            scuba diving
+                            <img 
+                                className="hover-img" 
+                                src={`${process.env.PUBLIC_URL}/assets/aboutImages/scuba.JPG`} 
+                                alt="Kia scuba diving"
+                                style={{top: `${pageX} px`, left:`${pageY} px`}}>
+                            </img>
+                        </span>, 
+                        <span className="hover-wrapper">
+                            hiking
+                            <img 
+                                className="hover-img" 
+                                src={`${process.env.PUBLIC_URL}/assets/aboutImages/hiking.JPG`} 
+                                alt="Kia hiking"
+                                style={{top: `${pageX} px`, left:`${pageY} px`}}>
+                            </img>
+                        </span>
+                        and more. I am always up for trying something new.</p> 
                     <p>I believe that you should never stop challenging yourself to learn new things and move outside your comfort zone. The everchanging nature of software engineering is a big part of why I find it so rewarding.</p>
 
                 </div>

@@ -33,7 +33,7 @@
   .divider {
     z-index: 0;
     position: absolute;
-    bottom: -10vh;
+    bottom: -11vh;
     left: 0;
     width: 100vw;
     overflow: hidden;
@@ -124,6 +124,35 @@
           transform: scale(2);
         }
       }
+
+      .hover-wrapper {
+        margin: 0 0.3em;
+
+        .hover-img {
+          display: none;
+        }
+
+        @include mediaMin($laptop) {
+          color: $color2;
+          cursor: none;
+
+          .hover-img {
+            display: block;
+            transform: translate(-50%, -50%);
+            max-width: 400px;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 300ms ease;
+            pointer-events: none;
+          }
+
+          &:hover {
+            .hover-img {
+              opacity: 1;
+            }
+          }
+        }
+      }
     }
 
     .left {
@@ -133,36 +162,43 @@
       .learning {
         display: flex;
 
+        @include mediaMax($smPhone) {
+          width: min-content;
+        }
+
         .dotdotdot {
           position: relative;
           @include flexBox(center, flex-end);
           margin: 1em 0.4em;
 
-          @include mediaMin($tablet) {
-            .dot {
-              margin: 0px 2.5px;
-              position: relative;
-              aspect-ratio: 1/1;
-              background: white;
-              display: inline-block;
-              border-radius: 50%;
-              right: 0;
-              bottom: 0;
-              color: transparent;
-              width: 4px;
-              height: 4px;
-              animation: jump 1.3s infinite;
+          .dot {
+            margin: 0px 2.5px;
+            position: relative;
+            aspect-ratio: 1/1;
+            background: $color3;
+            display: inline-block;
+            border-radius: 50%;
+            right: 0;
+            bottom: 0;
+            color: transparent;
+            animation: jump 1.3s infinite;
+            width: 4px;
+            height: 4px;
 
-              &:first-of-type {
-                animation-delay: 100ms;
-              }
+            @include mediaMax($phone) {
+              width: 2px;
+              height: 2px;
+            }
 
-              &:nth-of-type(2) {
-                animation-delay: 200ms;
-              }
-              &:nth-of-type(3) {
-                animation-delay: 300ms;
-              }
+            &:first-of-type {
+              animation-delay: 100ms;
+            }
+
+            &:nth-of-type(2) {
+              animation-delay: 200ms;
+            }
+            &:nth-of-type(3) {
+              animation-delay: 300ms;
             }
           }
         }

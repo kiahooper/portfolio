@@ -8,7 +8,9 @@
   overflow: hidden;
   position: relative;
   transition: all 500ms ease;
-  padding-top: 12vh;
+  @include mediaMin($laptop) {
+    padding-top: 12vh;
+  }
 
   &.active {
     .divider {
