@@ -130,6 +130,15 @@
           h3 {
             color: $color1;
           }
+
+          @include mediaMax($phone) {
+            h3 {
+              font-size: 1.7rem;
+            }
+            p {
+              font-size: 1.5rem;
+            }
+          }
         }
         ul {
           list-style: none;
