@@ -92,6 +92,10 @@
       animation-iteration-count: infinite;
       animation-name: arrow;
     }
+
+    @include mediaMax($phone) {
+      bottom: 12%;
+    }
   }
 }
 

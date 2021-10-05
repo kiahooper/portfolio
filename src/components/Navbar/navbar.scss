@@ -179,7 +179,6 @@
     .hamburger {
       width: 32px;
       height: 25px;
-      margin: 7px 0;
       @include mediaMin($fourK) {
         width: 57px;
         height: 50px;
@@ -191,7 +190,10 @@
       transition: all 300ms ease;
 
       &:hover {
-        margin: 0;
+        height: 32px;
+        @include mediaMin($fourK) {
+          height: 57px;
+        }
 
         span {
           &:nth-child(2) {

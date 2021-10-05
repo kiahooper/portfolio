@@ -32,10 +32,9 @@
   .divider {
     z-index: 0;
     position: absolute;
-    bottom: -70px;
+    bottom: 0;
     left: 0;
     width: 100vw;
-    overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
 
