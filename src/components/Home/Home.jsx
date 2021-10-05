@@ -7,7 +7,7 @@ export default function Home(props) {
 
     const addLongTextShadow = (color) => {
         let shadow = "";
-        for(let i=0; i<400; i++) {
+        for(let i=0; i<900; i++) {
             shadow += (shadow ? ",": "") + `${color} ` + -i*1+"px " + i*1 + "px";
         }
         return shadow

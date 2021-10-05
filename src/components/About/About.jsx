@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import './about.scss';
-import { EmojiObjects } from '@material-ui/icons';
 import useMousePosition from "../../hooks/useMousePosition";
 
 export default function About(props) {
@@ -77,7 +76,7 @@ export default function About(props) {
                                 className="hover-img" 
                                 src={`${process.env.PUBLIC_URL}/assets/aboutImages/surfing.JPG`} 
                                 alt="Kia surfing"
-                                style={{top: `${pageX} px`, left:`${pageY} px`}}>
+                                style={{transform: `translate(calc(-90% + ${pageX}px), calc(-90% + ${pageY}px))`}}>
                             </img>
                         </span>,                        
                         <span className="hover-wrapper">
@@ -86,7 +85,7 @@ export default function About(props) {
                                 className="hover-img" 
                                 src={`${process.env.PUBLIC_URL}/assets/aboutImages/scuba.JPG`} 
                                 alt="Kia scuba diving"
-                                style={{top: `${pageX} px`, left:`${pageY} px`}}>
+                                style={{transform: `translate(calc(-90% + ${pageX}px), calc(-90% + ${pageY}px))`}}>
                             </img>
                         </span>, 
                         <span className="hover-wrapper">
@@ -95,7 +94,7 @@ export default function About(props) {
                                 className="hover-img" 
                                 src={`${process.env.PUBLIC_URL}/assets/aboutImages/hiking.JPG`} 
                                 alt="Kia hiking"
-                                style={{top: `${pageX} px`, left:`${pageY} px`}}>
+                                style={{transform: `translate(calc(-90% + ${pageX}px), calc(-90% + ${pageY}px))`}}>
                             </img>
                         </span>
                         and more. I am always up for trying something new.</p> 

@@ -58,6 +58,10 @@
         display: inline-block;
         height: 8px;
         width: 8px;
+        @include mediaMin($fourK) {
+          height: 15px;
+          width: 15px;
+        }
         border-radius: 50%;
         border: 1.5px solid $color1;
         margin-right: 0.4em;

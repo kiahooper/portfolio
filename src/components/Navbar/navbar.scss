@@ -1,5 +1,4 @@
 @import "../../globalStyles/mixins";
-@import "../../globalStyles/animations";
 
 .navbar {
   font-size: 1.2rem;
@@ -7,6 +6,9 @@
   padding: 0 1.8em;
   @include mediaMax($phone) {
     height: 70px;
+  }
+  @include mediaMin($fourK) {
+    height: 200px;
   }
   @include flexBox(space-between, center);
   box-sizing: border-box;
@@ -80,6 +82,10 @@
         height: 40px;
         width: 40px;
       }
+      @include mediaMin($fourK) {
+        height: 80px;
+        width: 80px;
+      }
 
       svg {
         position: absolute;
@@ -108,9 +114,15 @@
           top: 7px;
           right: 5px;
         }
+        @include mediaMin($fourK) {
+          height: 30px;
+          width: 30px;
+          top: 13px;
+          right: 9px;
+        }
       }
 
-      @include mediaMin($laptop) {
+      @media (min-width: $laptop) and (max-width: $fourK) {
         .circle-animate-wrapper {
           animation: moveRight linear 3s 3s forwards;
 
@@ -149,12 +161,14 @@
         }
 
         @include mediaMin($laptop) {
-          opacity: 0;
-          &:first-of-type {
-            animation: show 1s ease 3650ms forwards;
-          }
-          &:last-of-type {
-            animation: show 1s ease 4480ms forwards;
+          @include mediaMax($fourK) {
+            opacity: 0;
+            &:first-of-type {
+              animation: show 1s ease 3580ms forwards;
+            }
+            &:last-of-type {
+              animation: show 1s ease 4480ms forwards;
+            }
           }
         }
       }
@@ -165,6 +179,11 @@
     .hamburger {
       width: 32px;
       height: 25px;
+      margin: 7px 0;
+      @include mediaMin($fourK) {
+        width: 57px;
+        height: 50px;
+      }
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -172,7 +191,7 @@
       transition: all 300ms ease;
 
       &:hover {
-        height: 32px;
+        margin: 0;
 
         span {
           &:nth-child(2) {
@@ -183,6 +202,9 @@
       span {
         width: 100%;
         height: 3px;
+        @include mediaMin($fourK) {
+          height: 6px;
+        }
         background-color: $color2;
         transform-origin: left;
         transition: all 300ms linear;
@@ -197,6 +219,9 @@
     .hamburger {
       &:hover {
         height: 25px;
+        @include mediaMin($fourK) {
+          height: 50px;
+        }
       }
       span {
         &:first-child {
@@ -212,5 +237,50 @@
         }
       }
     }
+  }
+}
+
+@keyframes myBounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(25px);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(240px);
+    top: -15px;
+    right: 5px;
+  }
+  66% {
+    transform: translateX(480px);
+    top: -15px;
+    right: 5px;
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(660px);
+    top: -20px;
+    right: 5px;
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

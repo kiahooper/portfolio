@@ -34,7 +34,7 @@ export default function Projects(props) {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                   }}
-                spaceBetween={20}
+                spaceBetween={30}
                 loop={true}
                 grabCursor={true} 
                 centeredSlides={true} 

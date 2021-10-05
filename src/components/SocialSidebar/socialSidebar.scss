@@ -20,6 +20,10 @@
     background-color: darken($color2, 2%);
     width: 50px;
     height: 40px;
+    @include mediaMin($fourK) {
+      width: 80px;
+      height: 70px;
+    }
     padding: 1em;
     @include borderRadius(20px, 0, 0, 20px);
     margin-bottom: 0.6em;

@@ -7,6 +7,9 @@
   flex-direction: column;
   transition: all 500ms ease;
   padding-top: 90px;
+  @include mediaMin($fourK) {
+    padding-top: 200px;
+  }
   position: relative;
   opacity: 0;
 
@@ -57,6 +60,7 @@
           box-sizing: border-box;
           transition: all 300ms ease;
           @include flexBox(center, flex-start);
+          overflow: hidden;
 
           img {
             min-height: 100%;
@@ -136,7 +140,7 @@
           li {
             font-size: 0.9rem;
             color: $color1;
-            margin-right: 0.7em;
+            margin-right: 0.6em;
           }
         }
       }
@@ -153,6 +157,9 @@
       @include mediaMax($tablet) {
         border: white solid 2px;
       }
+      @include mediaMin($fourK) {
+        border: white solid 12px;
+      }
     }
     .swiper-pagination-bullet-active {
       background-color: $color1;
@@ -160,6 +167,9 @@
 
       @include mediaMax($tablet) {
         border: $color1 solid 2px;
+      }
+      @include mediaMin($fourK) {
+        border: $color1 solid 12px;
       }
     }
 
@@ -172,6 +182,14 @@
 
       &:hover {
         transform: scale(1.1);
+      }
+
+      @include mediaMin($fourK) {
+        transform: scale(2);
+
+        &:hover {
+          transform: scale(2.1);
+        }
       }
     }
 

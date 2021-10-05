@@ -92,4 +92,12 @@ html,
   @include mediaMax($phone) {
     font-size: 10px;
   }
+
+  @include mediaMin($desktop) {
+    font-size: 23px;
+  }
+
+  @include mediaMin($fourK) {
+    font-size: 45px;
+  }
 }

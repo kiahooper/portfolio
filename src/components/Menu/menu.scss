@@ -16,6 +16,9 @@
 
     .circle {
       transform: scale(20);
+      @include mediaMin($fourK) {
+        transform: scale(40);
+      }
       top: -30vh;
       right: -30vw;
       transition-duration: 2s;
