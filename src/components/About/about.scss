@@ -7,7 +7,7 @@
   position: relative;
   transition: all 500ms ease;
   @include mediaMax($tablet) {
-    @include flexBox(center, stretch);
+    @include flexBox(center, center);
   }
   @include mediaMin($laptop) {
     padding-top: 15vh;
