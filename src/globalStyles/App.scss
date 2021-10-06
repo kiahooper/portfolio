@@ -15,6 +15,7 @@ html,
   margin: 0;
   padding: 0;
   height: 100vh;
+  width: 100vw;
   box-sizing: border-box;
   position: relative;
   color: white;
@@ -48,10 +49,11 @@ html,
     }
 
     > * {
+      overflow: hidden;
       width: 100vw;
       height: 100vh;
-      scroll-snap-align: start;
-      z-index: 2;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
   }
 

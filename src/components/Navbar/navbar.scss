@@ -26,6 +26,11 @@
         .circle {
           background: white;
         }
+        .circle-animate-wrapper {
+          .animate {
+            background: white;
+          }
+        }
       }
     }
     .right {
@@ -78,10 +83,12 @@
       z-index: 9;
       width: 50px;
       height: 50px;
+
       @include mediaMax($phone) {
         height: 40px;
         width: 40px;
       }
+
       @include mediaMin($fourK) {
         height: 80px;
         width: 80px;
@@ -108,12 +115,14 @@
         top: 8px;
         height: 18px;
         width: 18px;
+
         @include mediaMax($phone) {
           height: 15px;
           width: 15px;
           top: 7px;
           right: 5px;
         }
+
         @include mediaMin($fourK) {
           height: 30px;
           width: 30px;

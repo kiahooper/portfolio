@@ -7,7 +7,6 @@ export default function About(props) {
 
     const {visibleElement} = props;
     const {pageX, pageY} = useMousePosition();
-    console.log({pageX, pageY})
 
     return (
         <div id="about" className={visibleElement === "about" ? "about active" : "about"}>

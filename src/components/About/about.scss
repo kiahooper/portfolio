@@ -16,7 +16,7 @@
   &.active {
     .divider {
       svg {
-        height: 30vh;
+        height: 20vh;
       }
     }
 
@@ -30,6 +30,7 @@
   }
 
   .divider {
+    height: 20vh;
     z-index: 0;
     position: absolute;
     bottom: 0;
@@ -42,7 +43,7 @@
       position: relative;
       display: block;
       width: calc(100% + 1.3px);
-      height: 15vh;
+      height: 10vh;
       fill: $color2;
       transition: all 1s ease-out;
     }
