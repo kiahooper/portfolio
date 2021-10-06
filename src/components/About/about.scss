@@ -7,7 +7,7 @@
   position: relative;
   transition: all 500ms ease;
   @include mediaMax($tablet) {
-    @include flexBox(center, center);
+    @include flexBox(center, stretch);
   }
   @include mediaMin($laptop) {
     padding-top: 15vh;
@@ -82,6 +82,15 @@
       }
     }
 
+    h3 {
+      &:first-of-type {
+        padding-top: 100px;
+      }
+      &:nth-of-type(3) {
+        padding-top: 100px;
+      }
+    }
+
     h3,
     h2 {
       color: white;
@@ -105,6 +114,7 @@
     }
 
     .left {
+      margin-top: -100px;
       float: left;
       width: 24%;
 
@@ -176,6 +186,7 @@
     }
 
     .right {
+      margin-top: -100px;
       float: right;
       width: 73%;
 

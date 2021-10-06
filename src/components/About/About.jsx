@@ -28,7 +28,7 @@ export default function About(props) {
                         <p> Node JS</p></div>
 
                     <h3>The Nitty-Gritty</h3>
-                    <a href={`${process.env.PUBLIC_URL}/assets/CV-Kia-Hooper-Andersen.pdf`} className="cv" download>Download CV</a>
+                    <a href={`${process.env.PUBLIC_URL}/assets/KiaHooperAndersen_Resume.pdf`} className="cv" download>Download Resume</a>
                     <p>Visit my 
                         <a href="https://github.com/kiahooper" target="_blank" rel="noreferrer">Github</a> 
                         profile for more of my projects, my 
