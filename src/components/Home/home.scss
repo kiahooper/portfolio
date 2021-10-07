@@ -64,12 +64,16 @@
   }
 
   .arrow {
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
     position: absolute;
     left: 50%;
     width: 30px;
     height: 30px;
     bottom: 6%;
     margin: -20px 0 0 -20px;
+    transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     border-left: none;
     border-top: none;
@@ -99,6 +103,7 @@
   }
 }
 
+// Next section arrow
 @keyframes arrow {
   0% {
     opacity: 1;

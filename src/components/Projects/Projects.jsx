@@ -6,6 +6,8 @@ import 'swiper/swiper.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/effect-coverflow/effect-coverflow.min.css'
+
+// Swiper initiation
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
     Mousewheel, 
@@ -13,12 +15,11 @@ import SwiperCore, {
     Pagination, 
     Navigation
   } from 'swiper';
-
 SwiperCore.use([Mousewheel, EffectCoverflow,Pagination, Navigation]);
 
 export default function Projects(props) {
 
-    const { visibleElement } = props;
+    const {visibleElement} = props;
 
     return (
         <div id="projects" className={visibleElement === "projects" ? "projects active" : "projects"}>

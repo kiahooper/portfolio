@@ -404,6 +404,7 @@
   }
 }
 
+// Dot, dot, dot jumping
 @keyframes jump {
   0% {
     bottom: 0px;
@@ -416,6 +417,7 @@
   }
 }
 
+// Skills orbit spins
 @keyframes spin {
   100% {
     transform: rotate(360deg);

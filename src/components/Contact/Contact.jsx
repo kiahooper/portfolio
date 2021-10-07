@@ -1,15 +1,16 @@
-import {React, useState, useRef, useEffect }from 'react'
+import {React, useState}from 'react'
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
 import './contact.scss';
-import { Email, Subject, Person } from '@material-ui/icons';
+import {Email, Subject, Person} from '@material-ui/icons';
 
 export default function Contact(props) {
 
-    const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_USER_ID } = process.env;
-    const { visibleElement } = props;
-    const [ btnActive, setBtnActive ] = useState(false);
+    const {REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_USER_ID} = process.env;
+    const {visibleElement} = props;
+    const [btnActive, setBtnActive] = useState(false);
 
+    // Send email EmailJS and give SweetAlert confirmation
     const sendEmail = (e) => {
         e.preventDefault()
         emailjs.sendForm(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, e.target, REACT_APP_USER_ID)
@@ -30,6 +31,7 @@ export default function Contact(props) {
         e.target.reset()
     }
 
+    // Btn click start bubble animation
     const startAnimation = () => {
         setBtnActive(true);
         setTimeout(() => {

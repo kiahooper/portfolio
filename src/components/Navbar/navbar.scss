@@ -251,6 +251,7 @@
   }
 }
 
+// logo ball bounce y-axis
 @keyframes myBounce {
   0% {
     transform: translateY(0);
@@ -260,6 +261,7 @@
   }
 }
 
+// logo ball move x-axis
 @keyframes moveRight {
   0% {
     transform: translateX(0);
@@ -287,6 +289,7 @@
   }
 }
 
+// Show navbar items upon ball bounce
 @keyframes show {
   0% {
     opacity: 0;

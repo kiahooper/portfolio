@@ -13,12 +13,14 @@ import { useState, useEffect } from 'react';
 
 function App() {
 
+  // Side menu
   const [menuOpen, setMenuOpen] = useState(false);
   const [visibleElement, setVisibleElement] = useState("home");
 
+  // IntersectionObserver 
   useEffect(() => {
 
-    const components = document.querySelectorAll(".sections > *");
+    const components = document.querySelectorAll(".scroll_sections > *");
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -28,7 +30,7 @@ function App() {
         
       })
     }, {    
-      root: document.querySelector(".sections"),
+      root: document.querySelector(".scroll_sections"),
       rootMargin: '0px',
       threshold: 0.5
     });
@@ -50,7 +52,7 @@ function App() {
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <ScrollPagination visibleElement={visibleElement}/>
       <SocialSidebar />
-      <div className="sections">
+      <div className="scroll_sections">
         <Home visibleElement={visibleElement} />
         <Projects visibleElement={visibleElement} />
         <About visibleElement={visibleElement}/>

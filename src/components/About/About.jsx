@@ -1,5 +1,4 @@
 import React from 'react';
-import { Parallax } from 'react-scroll-parallax';
 import './about.scss';
 import useMousePosition from "../../hooks/useMousePosition";
 

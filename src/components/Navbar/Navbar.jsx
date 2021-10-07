@@ -1,5 +1,5 @@
 import React from 'react'
-import { Phone, Mail } from '@material-ui/icons';
+import {Phone, Mail} from '@material-ui/icons';
 import './navbar.scss';
 
 export default function Navbar(props) {
