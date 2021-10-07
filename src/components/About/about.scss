@@ -121,7 +121,7 @@
       .learning {
         display: flex;
 
-        @include mediaMax($smPhone) {
+        @include mediaMax($phone) {
           width: min-content;
         }
 
